@@ -1,0 +1,36 @@
+body {
+    background-color: #232323;
+    margin: 0;
+    font-family: 'Big Shoulders Display', cursive;
+}
+
+.square {
+    width: 30%;
+    background: purple;
+    padding-bottom: 30%;
+    float: left;
+    margin: 1.66%;
+}
+
+#container {
+    margin: 0 auto;
+    max-width: 600px;
+}
+
+#stripe {
+    background: white;
+    height: 30px;
+    text-align: center;
+    color: black;
+}
+
+h1 {
+    text-align: center;
+    color: white;
+    background: steelblue;
+    margin: 0;
+}
+
+.selected {
+    background: blue;
+}
