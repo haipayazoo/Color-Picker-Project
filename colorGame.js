@@ -113,3 +113,5 @@ function randomColor() {
     return "rgb(" + r + ", " + g + ", " + b + ")";
 
 }
+
+//TEST
