@@ -12,6 +12,10 @@ body {
     margin: 1.66%;
 }
 
+#colorDisplay {
+    font-size: 175%;
+}
+
 #container {
     margin: 0 auto;
     max-width: 600px;
@@ -25,10 +29,13 @@ body {
 }
 
 h1 {
+    line-height: 1.1;
     text-align: center;
     color: white;
     background: steelblue;
     margin: 0;
+    text-transform: uppercase;
+    padding: 20px 0;
 }
 
 .selected {
