@@ -16,6 +16,7 @@ easyButton.addEventListener("click", function(){
     colors = generateRandomColors(numSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
+    messageDisplay.textContent = "";
     for(var i = 0; i < squares.length; i++) {
         if(colors[i]) {
             squares[i].style.backgroundColor = colors[i];
@@ -33,6 +34,7 @@ hardButton.addEventListener("click", function(){
     colors = generateRandomColors(numSquares);
     pickedColor = pickColor();
     colorDisplay.textContent = pickedColor;
+    messageDisplay.textContent = "";
     for(var i = 0; i < squares.length; i++) {
             squares[i].style.backgroundColor = colors[i];
             squares[i].style.display = "block";
@@ -47,6 +49,7 @@ resetButton.addEventListener("click", function(){
     //change colorDisplay to match picked Color
     colorDisplay.textContent = pickedColor;
     //change colors of squares
+    messageDisplay.textContent = "";
     for(var i = 0; i < squares.length; i++) {
         squares[i].style.backgroundColor = colors[i];
     }
@@ -73,7 +76,7 @@ for(var i = 0; i < squares.length; i++){
 
         }
         else {
-            this.style.backgroundColor = "steelblue";
+            this.style.backgroundColor = "#232323";
             messageDisplay.textContent = "Try Again!";
         }
     });
