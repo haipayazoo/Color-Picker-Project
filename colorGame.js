@@ -6,55 +6,44 @@ var colorDisplay = document.getElementById("colorDisplay");
 var messageDisplay = document.querySelector("#message");
 var h1 = document.querySelector("h1");
 var resetButton = document.querySelector("#reset");
-var easyButton = document.querySelector("#easyBtn");
-var hardButton = document.querySelector("#hardBtn");
+var modeButtons = document.querySelectorAll(".mode");
 
-easyButton.addEventListener("click", function(){
-    easyButton.classList.add("selected");
-    hardButton.classList.remove("selected");
-    numSquares = 3;
-    colors = generateRandomColors(numSquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    messageDisplay.textContent = "";
-    for(var i = 0; i < squares.length; i++) {
-        if(colors[i]) {
-            squares[i].style.backgroundColor = colors[i];
-        }
-        else {
-            squares[i].style.display = "none";
-        }
-    }
-});
+for(var i = 0; i < modeButtons.length; i++) {
+    modeButtons[i].addEventListener("click", function() {
+        modeButtons[0].classList.remove("selected");
+        modeButtons[1].classList.remove("selected");
+        this.classList.add("selected");
+        this.textContent === "Easy" ? numSquares = 3 : numSquares = 6;
+        reset();
+    });
+}
 
-hardButton.addEventListener("click", function(){
-    easyButton.classList.remove("selected");
-    hardButton.classList.add("selected");
-    numSquares = 6
-    colors = generateRandomColors(numSquares);
-    pickedColor = pickColor();
-    colorDisplay.textContent = pickedColor;
-    messageDisplay.textContent = "";
-    for(var i = 0; i < squares.length; i++) {
-            squares[i].style.backgroundColor = colors[i];
-            squares[i].style.display = "block";
-    }
-});
-
-resetButton.addEventListener("click", function(){
+function reset() {
     //generate all new colors
     colors = generateRandomColors(numSquares);
     //pick a new random color from array
     pickedColor = pickColor();
     //change colorDisplay to match picked Color
     colorDisplay.textContent = pickedColor;
+    resetButton.textContent = "New Colors"
     //change colors of squares
     messageDisplay.textContent = "";
     for(var i = 0; i < squares.length; i++) {
+        if(colors[i]) {
+            squares[i].style.display = "block";
+            squares[i].style.backgroundColor = colors[i];
+        }
+        else {
+            squares[i].style.display = "none"
+        }
         squares[i].style.backgroundColor = colors[i];
     }
 
     h1.style.backgroundColor = "steelblue";
+}
+
+resetButton.addEventListener("click", function(){
+    reset();
 });
 
 colorDisplay.textContent = pickedColor;
